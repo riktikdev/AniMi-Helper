@@ -491,7 +491,7 @@ void get_random_anime() {
             cout << anime.synonyms[0];
         }
         else {
-            for (size_t i = 0; i < anime.synonyms.size(); ++i) {
+            for (size_t i = 0; i < anime.synonyms.size(); i++) {
                 cout << anime.synonyms[i];
                 if (i != anime.synonyms.size() - 1) {
                     cout << ", ";
@@ -871,6 +871,14 @@ void about() {
 
 void secret() {
     cout << "Ну что сказать... я ничего лучше не придумал как рубануть питание монитора :D" << endl;
+    Sleep(3000);
+    cout << "Выключаем через 3.." << endl;
+    Sleep(1000);
+    cout << "Выключаем через 2.." << endl;
+    Sleep(1000);
+    cout << "Выключаем через 1.." << endl;
+    Sleep(1500);
+    SendMessage(HWND_BROADCAST,WM_SYSCOMMAND,SC_MONITORPOWER, (LPARAM)2);
 }
 
 void show_menu() {
